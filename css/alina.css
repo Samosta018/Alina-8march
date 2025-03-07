@@ -68,10 +68,6 @@ body {
     scale: 0.98;
 }
 
-.welcome__text__wrap {
-    width: 50%;
-}
-
 .welcome__text__head {
     color: rgb(231, 80, 80);
     font-size: 2.4rem;
@@ -113,7 +109,7 @@ body {
 }
 
 .welcome__text__wrap {
-    width: 50%;
+    width: 100%;
     animation: slideInFromRight 1s ease-out forwards;
 }
 
