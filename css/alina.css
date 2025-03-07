@@ -1,0 +1,182 @@
+@import url(reset.css);
+
+* {
+    font-family: "Pacifico";
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-image: url('../media/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.welcome__wrap {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgba(71, 42, 42, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.2);
+}
+
+.welcome__block {
+    display: flex;
+    justify-content: space-between;   
+}
+
+
+.welcome__img__wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px; /* Уменьшил базовый размер */
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .welcome__img__wrap {
+        max-width: 350px; /* Увеличиваем для планшетов */
+    }
+}
+
+@media (min-width: 992px) {
+    .welcome__img__wrap {
+        max-width: 400px; /* Полноценный размер для десктопа */
+        margin: 0 2rem 0 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome__img__wrap {
+        max-width: 250px; /* Ещё меньше для маленьких экранов */
+    }
+}
+
+.welcome__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+}
+
+.welcome__img:hover {
+    scale: 0.98;
+}
+
+.welcome__text__wrap {
+    width: 50%;
+}
+
+.welcome__text__head {
+    color: rgb(231, 80, 80);
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.welcome__text__desc {
+    color: rgb(221, 201, 201);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+/* Анимация для первого блока */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.welcome__img__wrap {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.welcome__text__wrap {
+    width: 50%;
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+    .welcome__wrap {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    
+    .welcome__text__head {
+        font-size: 1.8rem;
+    }
+    
+    .welcome__text__desc {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .welcome__img__wrap {
+        margin-bottom: 20px;
+    }
+    
+    /* Адаптация анимаций для мобильных */
+    .welcome__img__wrap {
+        animation: slideInFromTop 1s ease-out forwards;
+    }
+    
+    .welcome__text__wrap {
+        animation: slideInFromBottom 1s ease-out forwards;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome__text__head {
+        font-size: 1.5rem;
+    }
+    
+    .welcome__text__desc {
+        font-size: 1rem;
+    }
+}
+
+/* Новые анимации для мобильной ориентации */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
